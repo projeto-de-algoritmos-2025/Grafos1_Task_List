@@ -10,9 +10,9 @@
 | 22/1007706  |  Elias Faria de Oliveira |
 
 ## Sobre 
-O TaskList apresenta um sistema de gerenciamento de atividades e tarefas com base na precêdencia de outras tarefas. O sistema possibilitará a criação de tarefas e mostrará o fluxo de execução das tarefas, obedecendo a ordem topológica e a precedência das tarefas criadas.
+O TaskList apresenta um sistema de gerenciamento de atividades e tarefas com base na precedência de outras tarefas. O sistema possibilitará a criação de tarefas, edição e exclusão de tarefas. Ela mostrará o fluxo de execução das tarefas, obedecendo a ordem topológica e a precedência das tarefas criadas.
 
-A aplicação possuirá um grafo contenso as tarefas sendo os nós do grafo e a precedência entre elas as arestas que ligarão uma a outra.
+A aplicação possuirá um grafo contendo as tarefas sendo os nós do grafo e a precedência entre elas as arestas que ligarão uma a outra.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
