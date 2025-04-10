@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from task import Task
 
 app = Flask(__name__)
@@ -12,14 +12,22 @@ task_list = {}
 @app.route("/criar", methods=['POST'])
 def create_task():
 
-    name = request.form['name']
-    description = request.form['description']
+    data = request.get_json()
 
-    task = Task(name,description)
+    id = data['id']
+    name = data['name']
+    description = data['description']
+
+
+    task = Task(id,name,description)
 
     task_list[name] = task
 
-    return f"A tarefa {name} foi cadastrada com sucesso, com a descrição {description}."
+    return jsonify({
+        'id': id,
+        'nome': name,
+        'descricao': description
+    })
 
 
 if __name__ == "__main__":
