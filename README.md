@@ -18,9 +18,23 @@ A aplicação possuirá um grafo contendo as tarefas sendo os nós do grafo e a 
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: Python3.12.3<br>
+**Linguagem**: Python 3.12.3<br>
 **Framework**: Flask<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+1. Tendo o Python instalado na sua máquina, basta clonar o projeto e rodar o comando abaixo na pasta raiz:
+
+    ```pip install -r requirements.txt```
+
+2. Depois, dentro da pasta ```tasks-list``` execute o arquivo ```app.py``` com o comando:
+    ```python app.py```
+
+3. Você verá algo assim no terminal:
+
+    ```* Running on http://127.0.0.1:5000/```
+
+4. Abra seu navegador e acesse:
+
+    ```http://127.0.0.1:5000/```
 
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
