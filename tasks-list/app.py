@@ -13,13 +13,20 @@ def home():
 @app.route("/criar", methods=['POST'])
 def create_task():
 
+    #resgata dados do form
     id = request.form['id']
     name =request.form['name']
     description = request.form['description']
+    deps_itens = request.form.get('dependencies', '')
 
+    dependencies = []
+    # de "1, 3, 4,5" vai para [1,3,4,5]
+    for dependencie in deps_itens.split(","): 
+        if dependencie.strip():
+            dependencies.append(dependencie)
 
-    task = Task(id,name,description)
-    task_list[name] = task
+    task = Task(id,name,description, dependencies)
+    task_list[id] = task
 
     return redirect("/")
 
