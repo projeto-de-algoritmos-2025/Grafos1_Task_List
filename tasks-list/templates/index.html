@@ -30,9 +30,14 @@
 
             <h2>Tarefas cadastradas:</h2>
 
-            <!-- Tarefas Cadastradas -->
+            <ul>
+                {% for task in tasks %}
+                    <li><strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }}</li>
+                {% else %}
+                    <li>Nenhuma tarefa cadastrada.</li>
+                {% endfor %}
+            </ul>
             
-
         </div> 
 
         
