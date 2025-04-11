@@ -17,20 +17,21 @@
             <form action="/criar" method="post">
 
                 <label >Id Tarefa:</label>
-                <input type="number" id="id"  placeholder="ID da tarefa"><br>
+                <input type="number" name="id"  placeholder="ID da tarefa"><br>
                 <br>
                 <label >Nome da Tarefa:</label>
-                <input type="text" id="name" placeholder="Nome da Tarefa"><br>
+                <input type="text" name="name" placeholder="Nome da Tarefa"><br>
                 <br>
                 <label >Descrição da Tarefa</label>
-                <input type="text" id="description " placeholder="Descrição da Tarefa">
+                <input type="text" name="description" placeholder="Descrição da Tarefa">
 
-                <button onclick="create_task()">Criar</button>
+                <button type="submit">Criar</button>
             </form>
 
-            <p id="resultado"></p>
+            <h2>Tarefas cadastradas:</h2>
 
-            <script src="../static/script.js"></script>
+            <!-- Tarefas Cadastradas -->
+            
 
         </div> 
 

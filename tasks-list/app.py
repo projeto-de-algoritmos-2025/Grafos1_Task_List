@@ -12,23 +12,17 @@ task_list = {}
 @app.route("/criar", methods=['POST'])
 def create_task():
 
-    data = request.get_json()
 
-    id = data['id']
-    name = data['name']
-    description = data['description']
+    id = request.form['id']
+    name =request.form['name']
+    description = request.form['description']
 
 
     task = Task(id,name,description)
 
     task_list[name] = task
 
-    return jsonify({
-        'id': id,
-        'nome': name,
-        'descricao': description
-    })
-
+    return f"{id} {name} {description}"
 
 if __name__ == "__main__":
     app.run(debug=True)
