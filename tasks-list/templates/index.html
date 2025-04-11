@@ -35,7 +35,13 @@
 
             <ul>
                 {% for task in tasks %}
-                    <li><strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }} - Deps: {{ task.dependencies }}</li>
+                    <li>
+                        <strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }}
+                        {% if task.dependencies %}
+                            <br>Depende de: {{ task.dependencies | join(', ') }}
+                        {% endif %}
+                    </li>
+
                 {% else %}
                     <li>Nenhuma tarefa cadastrada.</li>
                 {% endfor %}

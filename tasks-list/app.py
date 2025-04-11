@@ -20,9 +20,11 @@ def create_task():
     deps_itens = request.form.get('dependencies', '')
 
     dependencies = []
-    # de "1, 3, 4,5" vai para [1,3,4,5]
-    for dependencie in deps_itens.split(","): 
-        if dependencie.strip():
+
+    # de "1, 3, 4,5 , " vai para [1,3,4,5]
+    for dependencie in deps_itens.split(","):
+        dependencie = dependencie.strip()
+        if dependencie:
             dependencies.append(dependencie)
 
     task = Task(id,name,description, dependencies)
