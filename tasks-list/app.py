@@ -4,7 +4,7 @@ from write_read_tasks import read_task_json, create_task_json
 
 app = Flask(__name__)
 
-FILE_NAME = "tasks.json"
+FILE_NAME = "tasks-list/tasks.json"
 
 task_list = read_task_json(FILE_NAME)
 
