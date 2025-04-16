@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request, jsonify, redirect
 from task import Task
+from write_read_tasks import read_task_json, create_task_json
 
 app = Flask(__name__)
 
-task_list = {}
+FILE_NAME = "tasks.json"
 
-@app.route("/")
+task_list = read_task_json(FILE_NAME)
+
+@app.route("/",methods=["GET"])
 def home():
     return render_template("index.html", tasks=task_list.values())
 
@@ -29,6 +32,8 @@ def create_task():
 
     task = Task(id,name,description, dependencies)
     task_list[id] = task
+
+    create_task_json(FILE_NAME,task_list)
 
     return redirect("/")
 
