@@ -1,3 +1,6 @@
+from write_read_tasks import create_task_json , read_task_json
+from task import Task
+
 def topological_sort(task_list):
     # cada chave é uma tarefa e os valores são as tarefas que dependem dela
     graph = {}
@@ -9,9 +12,12 @@ def topological_sort(task_list):
         graph[task.id] = []
         in_degree[task.id] = 0
 
-    # TODO: criar um for para preencher o graph(os IDs de dependencias de cada task sendo a CHAVE e o VALOR sendo as tarefas que dependem desse ID)
-    ### ao final somar 1 no valor do ID da tarefa no in_degree
-
+    #### criar um for para preencher o graph(os IDs de dependencias de cada task sendo a CHAVE e o VALOR sendo as tarefas que dependem desse ID)
+    ### ao final somar 1 no valor do ID da tarefa no in_degree 
+    for task in task_list.items():
+        graph[task.id] = {"dependencies": task.dependencies}
+        node_deps = node_deps.__len__()
+        in_degree[task.id] = {"node_dependencies": node_deps}
 
 
     # TODO: fila de tarefas que não têm dependências

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, render_template, request, redirect
 from task import Task
 from write_read_tasks import read_task_json, create_task_json
 
