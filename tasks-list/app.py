@@ -43,9 +43,10 @@ def ordenar_tarefas():
     try:
         ordenadas = topological_sort(task_list)
         tarefas_ordenadas = [task_list[id] for id in ordenadas]
-        return
+        return render_template("ordenadas.html",tasks = tarefas_ordenadas)
     except ValueError as e:
         return str(e)
+
 if __name__ == "__main__":
     app.run(debug=True)
 
