@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/stylesheet.css" media="screen" />
     <title>Document</title>
 </head>
 <body>
 
-    {% for task in tasks %}
-        <li>
-            <strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }}
-            {% if task.dependencies %}
-                <br>Depende de: {{ task.dependencies | join(', ') }}
-            {% endif %}
-        </li>
+    <div class="order-task">
 
-        {% else %}
-            <li>Nenhuma tarefa cadastrada.</li>
-        {% endfor %}
+        <h1>Tarefas Ordenadas</h1>
+
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }}
+                {% if task.dependencies %}
+                    <br>Depende de: {{ task.dependencies | join(', ') }}
+                {% endif %}
+            </li>
+
+            {% else %}
+                <li>Nenhuma tarefa cadastrada.</li>
+            {% endfor %}
+
+    </div>
     
 </body>
 </html>
