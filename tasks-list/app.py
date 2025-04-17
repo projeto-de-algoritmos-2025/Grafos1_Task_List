@@ -5,11 +5,8 @@ from topological_ordering import topological_sort
 
 app = Flask(__name__)
 
-# Inicialização com arquivo padrão
-FILE_NAME = "tasks-list/tasks.json"
-task_list = read_task_json(FILE_NAME)
-cenario_atual = FILE_NAME  # para exibir no HTML qual cenário está em uso
-
+task_list = {}
+cenario_atual = None
 
 @app.route("/", methods=["GET"])
 def home():
@@ -32,11 +29,10 @@ def create_task():
         if dependencie:
             dependencies.append(dependencie)
 
-    # Cria e adiciona a tarefa
     task = Task(id, name, description, dependencies)
     task_list[id] = task
 
-    # (Opcional) Salva no JSON se quiser persistir
+    # Salva as tarefas no arquivo JSON
     # create_task_json(FILE_NAME, task_list)
 
     return redirect("/")
@@ -60,14 +56,14 @@ def carregar_json():
     escolha = request.form.get("cenario")
 
     if escolha == "ordenavel":
-        arquivo = "cenarios/cenario_ordenavel.json"
+        arquivo = "tasks-list/cenarios/cenario_ordenavel.json"
     elif escolha == "com_ciclo":
-        arquivo = "cenarios/cenario_com_ciclo.json"
+        arquivo = "tasks-list/cenarios/cenario_com_ciclo.json"
     else:
         return "Cenário inválido", 400
 
     task_list = read_task_json(arquivo)
-    cenario_atual = arquivo
+    cenario_atual = escolha 
 
     return redirect("/")
 

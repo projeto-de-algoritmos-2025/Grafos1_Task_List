@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,67 +9,61 @@
 <body>
 
     <div class="bloco">
+    
         <div class="texto">
 
             <h1>Lista de Tarefas</h1>
 
-            {% if cenario_atual %}
-                <p><strong>Cenário atual:</strong> {{ cenario_atual.split('/')[-1] }}</p>
-            {% endif %}
-
-            <fieldset>
-                <legend>Carregar Cenário</legend>
-                <form action="/carregar-json" method="post">
-                    <label for="cenario">Escolha um cenário para teste:</label>
-                    <select name="cenario" id="cenario">
-                        <option value="ordenavel">Cenário Ordenável</option>
-                        <option value="com_ciclo">Cenário com Ciclo</option>
-                    </select>
-                    <button type="submit">Carregar</button>
-                </form>
-            </fieldset>
+            <!-- Formulário para selecionar o cenário -->
+            <form action="/carregar-json" method="post">
+                <label for="cenario">Escolha um cenário para teste:</label>
+                <select name="cenario" id="cenario">
+                    <option value="ordenavel" {% if cenario_atual == 'ordenavel' %} selected {% endif %}>Cenário Ordenável</option>
+                    <option value="com_ciclo" {% if cenario_atual == 'com_ciclo' %} selected {% endif %}>Cenário com Ciclo</option>
+                </select>
+                <button type="submit">Carregar</button>
+            </form>
 
             <br>
+            <!-- Formulário para criar novas tarefas -->
+            <form action="/criar" method="post">
+                <label>Id Tarefa:</label>
+                <input type="number" name="id" placeholder="ID da tarefa"><br><br>
 
-            <fieldset>
-                <legend>Criar Nova Tarefa</legend>
-                <form action="/criar" method="post">
-                    <label>ID da Tarefa:</label>
-                    <input type="number" name="id" placeholder="ID da tarefa"><br><br>
+                <label>Nome da Tarefa:</label>
+                <input type="text" name="name" placeholder="Nome da Tarefa"><br><br>
 
-                    <label>Nome da Tarefa:</label>
-                    <input type="text" name="name" placeholder="Nome da Tarefa"><br><br>
+                <label>Descrição da Tarefa:</label>
+                <input type="text" name="description" placeholder="Informações adicionais para a tarefa"><br><br>
 
-                    <label>Descrição da Tarefa:</label>
-                    <input type="text" name="description" placeholder="Informações adicionais para a tarefa"><br><br>
+                <label>Dependências (IDs separados por vírgula):</label>
+                <input type="text" name="dependencies" placeholder="Ex: 1, 3, 7"><br><br>
 
-                    <label>Dependências (IDs separados por vírgula):</label>
-                    <input type="text" name="dependencies" placeholder="Ex: 1, 3, 7"><br><br>
+                <button type="submit">Criar</button>
+            </form>
 
-                    <button type="submit">Criar</button>
-                </form>
-            </fieldset>
 
-            <br>
+            <a href="/ordenar"><button> Tarefas Ordenadas</button></a>
 
-            <h2>Tarefas Cadastradas:</h2>
-            <ul>
-                {% for task in tasks %}
-                    <li>
-                        <strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }}
-                        {% if task.dependencies %}
-                            <br>Depende de: {{ task.dependencies | join(', ') }}
-                        {% endif %}
-                    </li>
-                {% else %}
-                    <li>Nenhuma tarefa cadastrada.</li>
-                {% endfor %}
-            </ul>
+             <!-- Se o cenário foi carregado, exibe as tarefas cadastradas -->
+             {% if tasks %}
+             <h2>Tarefas cadastradas:</h2>
+             <ul>
+                 {% for task in tasks %}
+                     <li>
+                         <strong>{{ task.name }}</strong> (ID: {{ task.id }}) — {{ task.description }}
+                         {% if task.dependencies %}
+                             <br>Depende de: {{ task.dependencies | join(', ') }}
+                         {% endif %}
+                     </li>
+                 {% endfor %}
+             </ul>
+         {% else %}
+             <p>Nenhuma tarefa carregada. Selecione um cenário para começar.</p>
+         {% endif %}
+            
+        </div> 
 
-            <h2>Ordenar Tarefas</h2>
-            <a href="/ordenar"><button>Ver Tarefas Ordenadas</button></a>
-
-        </div>
     </div>
 
 </body>
