@@ -32,9 +32,17 @@ def topological_sort(task_list):
 
     # TODO: fila de tarefas que não têm dependências
     
-    
+    ## supondo que tenha um array chamado 'queue'
 
     # TODO: Processar a fila e construir a ordenação topológica
+    while queue:
+    current = queue.pop(0)
+    sorted_tasks.append(current)
+
+    for neighbor in graph[current]:
+        in_degree[neighbor] -= 1
+        if in_degree[neighbor] == 0:
+            queue.append(neighbor)
 
 
     # Verificação de ciclo: se não ordenou tudo, tem dependência circular
