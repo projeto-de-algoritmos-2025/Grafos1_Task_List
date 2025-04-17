@@ -6,7 +6,7 @@
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| 22/1007958  |  Claudio Henrique dos Santos Carvalho |
+| 22/1007958  |  Cláudio Henrique dos Santos Carvalho |
 | 22/1007706  |  Elias Faria de Oliveira |
 
 ## Sobre 
@@ -15,11 +15,30 @@ O TaskList apresenta um sistema de gerenciamento de atividades e tarefas com bas
 A aplicação possuirá um grafo contendo as tarefas sendo os nós do grafo e a precedência entre elas as arestas que ligarão uma a outra.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+Screenshot da tela Home do projeto:
+
+![Foto Home](tasks-list\fotos\foto-home-tasks.jpg)
+
+Screenshot das tarefas carregadas que podem ser ordenadas:
+
+![Foto Home](tasks-list\fotos\cenario-carregado-ordenavel-fora-de-ordem.jpg)
+
+Screenshot das tarefas ordenadas:
+
+![Foto Home](tasks-list\fotos\tarefas-ordenadas.jpg)
+
+Screenshot das tarefas com ciclo que não podem ser ordenadas:
+
+![Foto Home](tasks-list\fotos\cenario-carregado-com-ciclo.jpg)
+
+Screenshot da tela de erro das tarefas com ciclo:
+
+![Foto Home](tasks-list\fotos\erro-tarefas-com-ciclo.jpg)
 
 ## Instalação 
 **Linguagem**: Python 3.12.3<br>
-**Framework**: Flask<br>
+**Framework**: Flask 2.3.2<br>
 
 1. Tendo o Python instalado na sua máquina, basta clonar o projeto e rodar o comando abaixo na pasta raiz:
 
@@ -37,7 +56,8 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
     ```http://127.0.0.1:5000/```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+
+Só bastar ```http://127.0.0.1:5000/``` e cadastrar algumas tarefas com dependências entre si, ou se preferir, pode carregar os templates cadastrados na aplicação.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.

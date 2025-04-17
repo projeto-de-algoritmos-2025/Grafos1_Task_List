@@ -37,6 +37,7 @@ def topological_sort(task_list):
         
     # Verificação de ciclo: se não ordenou tudo, tem dependência circular
     if len(sorted_tasks) != len(task_list):
+        print(sorted_tasks)
         raise ValueError("Ciclo detectado! Não é possível ordenar as tarefas.")
 
     return sorted_tasks
