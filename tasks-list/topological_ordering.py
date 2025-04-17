@@ -14,8 +14,8 @@ def topological_sort(task_list):
 
 
 
-    # fila de tarefas que não têm dependências
-    queue = [task_id for task_id, deg in in_degree.items() if deg == 0]
+    # TODO: fila de tarefas que não têm dependências
+    
     sorted_tasks = []
 
     # TODO: Processar a fila e construir a ordenação topológica
