@@ -1,5 +1,3 @@
-from write_read_tasks import create_task_json , read_task_json
-from task import Task
 
 def topological_sort(task_list):
     # cada chave é uma tarefa e os valores são as tarefas que dependem dela

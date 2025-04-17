@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from task import Task
 from write_read_tasks import read_task_json, create_task_json
+from topological_ordering import topological_sort
 
 app = Flask(__name__)
 
@@ -37,6 +38,14 @@ def create_task():
 
     return redirect("/")
 
+@app.route("/ordenar", methods=["GET"])
+def ordenar_tarefas():
+    try:
+        ordenadas = topological_sort(task_list)
+        tarefas_ordenadas = [task_list[id] for id in ordenadas]
+        return
+    except ValueError as e:
+        return str(e)
 if __name__ == "__main__":
     app.run(debug=True)
 
