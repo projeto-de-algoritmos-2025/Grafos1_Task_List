@@ -1,0 +1,38 @@
+{
+    "x1y2": {
+        "id": "x1y2",
+        "name": "Definir objetivos",
+        "description": "Objetivos gerais do sistema",
+        "dependencies": ["m5n6"]
+    },
+    "z3w4": {
+        "id": "z3w4",
+        "name": "Análise técnica",
+        "description": "Viabilidade técnica do projeto",
+        "dependencies": ["x1y2"]
+    },
+    "m5n6": {
+        "id": "m5n6",
+        "name": "Especificação detalhada",
+        "description": "Documentação completa do sistema",
+        "dependencies": ["z3w4"]
+    },
+    "a1b2": {
+        "id": "a1b2",
+        "name": "Planejar projeto",
+        "description": "Início do planejamento",
+        "dependencies": []
+    },
+    "a2d1": {
+        "id": "a2d1",
+        "name": "Análise de requisitos",
+        "description": "Entrevistas com stakeholders",
+        "dependencies": ["a1b2"]
+    },
+    "b3c1": {
+        "id": "b3c1",
+        "name": "Definir escopo",
+        "description": "Estabelecer o que será entregue",
+        "dependencies": ["a2d1"]
+    }
+}
