@@ -32,8 +32,7 @@ def create_task():
     task = Task(id, name, description, dependencies)
     task_list[id] = task
 
-    # Salva as tarefas no arquivo JSON
-    # create_task_json(FILE_NAME, task_list)
+    create_task_json(f"tasks-list/cenarios/{cenario_atual}.json", task_list)
 
     return redirect("/")
 
