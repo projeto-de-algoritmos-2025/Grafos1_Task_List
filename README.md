@@ -38,7 +38,7 @@ Screenshot da tela de erro das tarefas com ciclo:
 
 ## Vídeo de apresentação e explicação do sistema TaskList
 
-[Link da Gravação](https://unbbr-my.sharepoint.com/personal/221007706_aluno_unb_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F221007706%5Faluno%5Funb%5Fbr%2FDocuments%2FGrava%C3%A7%C3%B5es%2FReuni%C3%A3o%20do%20Microsoft%20Teams%2D20250417%5F180131%2DGrava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E93df1c19%2D79d1%2D4ae8%2Da4e5%2D1c5868616470&ga=1)
+[Link da Gravação](https://youtu.be/FOjtSsT-_0E)
 
 ## Instalação 
 **Linguagem**: Python 3.12.3<br>
