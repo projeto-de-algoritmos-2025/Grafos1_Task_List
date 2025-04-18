@@ -18,23 +18,27 @@ A aplicação possuirá um grafo contendo as tarefas sendo os nós do grafo e a 
 
 Screenshot da tela Home do projeto:
 
-![Foto Home](tasks-list\fotos\foto-home-tasks.jpg)
+![Foto Home](tasks-list/fotos/foto-home-tasks.jpg)
 
 Screenshot das tarefas carregadas que podem ser ordenadas:
 
-![Foto Home](tasks-list\fotos\cenario-carregado-ordenavel-fora-de-ordem.jpg)
+![Foto Home](tasks-list/fotos/cenario-carregado-ordenavel-fora-de-ordem.jpg)
 
 Screenshot das tarefas ordenadas:
 
-![Foto Home](tasks-list\fotos\tarefas-ordenadas.jpg)
+![Foto Home](tasks-list/fotos/tarefas-ordenadas.jpg)
 
 Screenshot das tarefas com ciclo que não podem ser ordenadas:
 
-![Foto Home](tasks-list\fotos\cenario-carregado-com-ciclo.jpg)
+![Foto Home](tasks-list/fotos/cenario-carregado-com-ciclo.jpg)
 
 Screenshot da tela de erro das tarefas com ciclo:
 
-![Foto Home](tasks-list\fotos\erro-tarefas-com-ciclo.jpg)
+![Foto Home](tasks-list/fotos/erro-tarefas-com-ciclo.jpg)
+
+## Vídeo de apresentação e explicação do sistema TaskList
+
+[Link da Gravação](https://unbbr-my.sharepoint.com/personal/221007706_aluno_unb_br/_layouts/15/stream.aspx?id=%2Fpersonal%2F221007706%5Faluno%5Funb%5Fbr%2FDocuments%2FGrava%C3%A7%C3%B5es%2FReuni%C3%A3o%20do%20Microsoft%20Teams%2D20250417%5F180131%2DGrava%C3%A7%C3%A3o%20de%20Reuni%C3%A3o%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E93df1c19%2D79d1%2D4ae8%2Da4e5%2D1c5868616470&ga=1)
 
 ## Instalação 
 **Linguagem**: Python 3.12.3<br>
@@ -57,7 +61,7 @@ Screenshot da tela de erro das tarefas com ciclo:
 
 ## Uso 
 
-Só bastar ```http://127.0.0.1:5000/``` e cadastrar algumas tarefas com dependências entre si, ou se preferir, pode carregar os templates cadastrados na aplicação.
+Basta abrir o endereço ```http://127.0.0.1:5000/``` no navegador e cadastrar algumas tarefas com dependências entre si, ou se preferir, pode carregar os templates cadastrados na aplicação.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
